@@ -20,7 +20,9 @@ Plug 'ryanoasis/vim-devicons' " Developer Icons
 Plug 'tc50cal/vim-terminal' " Vim Terminal
 Plug 'preservim/tagbar' " Tagbar for code navigation
 Plug 'terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter' " For syntax highlighting
+Plug 'jiangmiao/auto-pairs' " For insert or delete brackets, parens, quotes in pair
+Plug 'airblade/vim-gitgutter' " Git Diff markers
 
 set encoding=UTF-8
 
@@ -67,5 +69,6 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+autocmd TermOpen * setlocal nonumber norelativenumber
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 luafile ~/.config/nvim/nvim_lua.lua

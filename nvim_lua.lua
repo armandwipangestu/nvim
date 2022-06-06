@@ -47,11 +47,7 @@ map("v", "<C-d>", [[<end>]], opt)
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-	ensure_installed = { 
-		"lua", "vim", "html",
-		"css", "javascript", "php",
-		"bash", "c", "cpp", "c_sharp"
-	},
+  -- ensure_installed = { "c", "lua", "rust" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
