@@ -23,6 +23,9 @@ Plug 'terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'nvim-treesitter/nvim-treesitter' " For syntax highlighting
 Plug 'jiangmiao/auto-pairs' " For insert or delete brackets, parens, quotes in pair
 Plug 'airblade/vim-gitgutter' " Git Diff markers
+Plug 'wojciechkepka/vim-github-dark'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/loremipsum'
 
 set encoding=UTF-8
 
@@ -47,7 +50,9 @@ nmap <F8> :TagbarToggle<CR>
 
 ":set completeopt-=preview " For No Previews
 
-:colorscheme ayu
+":colorscheme ayu
+:colorscheme ghdark
+"let g:gh_color = "soft"
 :set termguicolors
 
 let g:NERDTreeDirArrowExpandable="+"
@@ -60,10 +65,17 @@ if !exists('g:airline_symbols')
 endif
 
 " airline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+":AirlineTheme ghdark
+
+let g:airline_theme = 'zenburn'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_left_sep = ' '
+let g:airline_left_alt_sep = '|'
+let g:airline_right_sep = ' '
+let g:airline_right_alt_sep = '|'
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''

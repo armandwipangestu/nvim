@@ -1,10 +1,23 @@
 local cmd = vim.cmd
 
+--cmd [[AirlineTheme ghdark]]
+
 -- Return to last edit line position when opening files
 cmd [[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]];
 
 -- Set nowrap text when opening files
 cmd [[set nowrap]];
+
+-- Set Cursor Underline
+cmd [[set guicursor=]];
+
+-- Restore Cursor
+cmd [[
+  augroup RestoreCursorShapeOnExit
+    autocmd!
+    autocmd VimLeave * set guicursor=a:hor20
+  augroup END
+]];
 
 -- mapping
 
